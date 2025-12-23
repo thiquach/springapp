@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="alien" class="com.spring.app.Alien" autowire="byName">
+        <property name="age" value="21"/>
+        <property name="com" ref="com1"/>
+    </bean>
+
+    <bean id="com1" class="com.spring.app.Laptop" primary="true">
+    </bean>
+
+    <bean id="com2" class="com.spring.app.Desktop" lazy-init="true">
+    </bean>
+</beans>
