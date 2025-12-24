@@ -7,28 +7,31 @@ import com.spring.app.Laptop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 @Configuration
+@ComponentScan("com.spring.app")
 public class AppConfig {
 
-    @Bean
-    public Alien alien(@Qualifier("laptop") @Autowired Computer com) {
-        Alien alien = new Alien();
-        alien.setAge(25);
-        alien.setCom(com);
-        return alien;
-    }
-
-    @Bean
-    public Desktop desktop() {
-        return new Desktop();
-    }
-
-    @Bean
-    @Primary
-    public Laptop laptop() {
-        return new Laptop();
-    }
+    // @ComponentScan of the package replaces the following @Bean
+//    @Bean
+//    public Alien alien(@Qualifier("laptop") @Autowired Computer com) {
+//        Alien alien = new Alien();
+////        alien.setAge(21);
+//        alien.setCom(com);
+//        return alien;
+//    }
+//
+//    @Bean
+//    public Desktop desktop() {
+//        return new Desktop();
+//    }
+//
+//    @Bean
+//    @Primary
+//    public Laptop laptop() {
+//        return new Laptop();
+//    }
 }

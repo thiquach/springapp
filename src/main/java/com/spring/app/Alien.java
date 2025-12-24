@@ -1,14 +1,16 @@
 package com.spring.app;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Alien {
+    @Value("25")
     private int age;
     private Computer com;
 
     public Alien() {
-        System.out.println("Alien constructor");
+        System.out.println("Alien constructor - " + age);
     }
 
     public void code() {
